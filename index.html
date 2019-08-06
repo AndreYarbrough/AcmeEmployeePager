@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <style>
+            
+body {
+  font-family: verdana;
+}
+
+.user,#table-header {
+  display: flex;
+  border-bottom: solid 1px #333;
+}
+
+#table-header {
+  background-color: dodgerBlue;
+  color: white;
+  font-weight: bold;
+}
+.user div,#table-header div {
+  padding: 1rem;
+  font-size: smaller;
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+#pager {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+}
+
+a {
+  color: dodgerBlue;
+}
+
+@media (max-width: 600px){
+  #table-header {
+    display: none;
+  }
+  .user {
+    flex-direction: column;
+  }
+  .user div {
+    padding: 0.5rem;
+  }
+  #pager {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+        </style>
+    </head>
+    <body>
+        
+        <script>
+        </script>
+    </body>
+</html>
