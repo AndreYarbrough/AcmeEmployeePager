@@ -58,8 +58,27 @@ a {
         </style>
     </head>
     <body>
-        
+        <div id="pager"></div>
+        <div id="userList"></div>
         <script>
+            
+            let data
+            const loadList=async() =>{
+                const response = await fetch('https://acme-users-api-rev.herokuapp.com/api/users');
+                data=await response.json();
+                console.log(data);
+                       
+            }
+            loadList();
+            const {count,users}=data;
+            const usersList=document.querySelector('#userList')
+            const render = ()=>{
+                const html=data.map(user =>{return 
+                    `<div class="user">${user.firstName}<div>${user.lastName}</div><div>${user.email}</div><div>${user.title}</div></div>`
+                }).join('');
+                usersList.innerHTML=html;
+            }
+            render();
         </script>
     </body>
 </html>
