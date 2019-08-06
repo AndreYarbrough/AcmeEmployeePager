@@ -83,7 +83,7 @@ a {
 
             window.addEventListener('hashchange', (ev) =>{
               const id = window.location.hash.slice(1);
-              if(id === "last"){
+              /*if(id === "last"){
                 page = 2;
               } else if (id === "+1"){
                   if(page ===''){
@@ -93,13 +93,23 @@ a {
                 page = page + 1;
               } else if (id === "first"){
                 page = '';
+              }*/
+              switch(id)  {
+                    case 'last':
+                    page = 2;
+                    break;
+                    case '+1':
+                    page = page+1;   
+                    break;
+                    case 'first':
+                    page =0;
+                    break;
               }
               loadList(page);
               console.log(id);
             });
 
             const usersList=document.querySelector('#userList')
-
             const render = ()=>{
 
                 const html = data.users.map(user => `
